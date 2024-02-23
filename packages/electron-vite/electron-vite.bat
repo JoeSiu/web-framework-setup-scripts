@@ -23,6 +23,7 @@ echo. >> electron.vite.config.ts
 echo export default defineConfig({ >> electron.vite.config.ts
 echo   main: { >> electron.vite.config.ts
 echo     build: { >> electron.vite.config.ts
+echo       outDir: 'dist/main',
 echo       rollupOptions: { >> electron.vite.config.ts
 echo         input: { >> electron.vite.config.ts
 echo           index: resolve(__dirname, "electron/main/index.ts"), >> electron.vite.config.ts
@@ -32,6 +33,7 @@ echo     }, >> electron.vite.config.ts
 echo   }, >> electron.vite.config.ts
 echo   preload: { >> electron.vite.config.ts
 echo     build: { >> electron.vite.config.ts
+echo       outDir: 'dist/preload',
 echo       rollupOptions: { >> electron.vite.config.ts
 echo         input: { >> electron.vite.config.ts
 echo           index: resolve(__dirname, "electron/preload/index.ts"), >> electron.vite.config.ts
@@ -42,6 +44,7 @@ echo   }, >> electron.vite.config.ts
 echo   renderer: { >> electron.vite.config.ts
 echo     root: ".", >> electron.vite.config.ts
 echo     build: { >> electron.vite.config.ts
+echo       outDir: 'dist/renderer',
 echo       rollupOptions: { >> electron.vite.config.ts
 echo         input: { >> electron.vite.config.ts
 echo           index: resolve(__dirname, "index.html"), >> electron.vite.config.ts
@@ -51,7 +54,7 @@ echo     }, >> electron.vite.config.ts
 echo   }, >> electron.vite.config.ts
 echo }); >> electron.vite.config.ts
 
-echo Follow the remaining instructions (add "main": "./out/main/index.js" to package.json, add scripts to package.json)
+echo Follow the remaining instructions (add "main": "./dist/main/index.js" to package.json, add scripts to package.json)
 start https://electron-vite.org/guide/#command-line-interface
 start https://electron-vite.org/guide/#electron-entry-point
 
